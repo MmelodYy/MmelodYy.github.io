@@ -181,17 +181,7 @@
   </script>
 
 
-  <style>
-      .overlay-badge {
-        position: absolute;
-        bottom: -10px;   
-        right: -20px;
-        width: 64px;
-        height: 48px;
-        pointer-events: none;
-        z-index: 10;
-      }
-    </style>
+ 
 </head>
 <body>
 
@@ -364,10 +354,10 @@ learning-based image stitching.
             <div class="col-md-12">
                 <h2 class="no-mb">Paper</h2>
                 <a href="https://arxiv.org/pdf/2603.10568" target="_blank" rel="noopener noreferrer">
-                    <div class="box-image no-mt">
+                    <div class="box-image no-mt" style="position: relative;">
                         <img src="static/images/paper.jpg" alt="Unistitch_paper" class="img-fluid image1" loading="lazy">
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <span class="btn btn-template-outlined-white">
+                        <div class="overlay d-flex align-items-center justify-content-center" style="background: rgba(0, 0, 0, 0.4); opacity: 1;">
+                            <span class="btn btn-template-outlined-white" style="border-color: white; color: white;">
                                 <i class="fa fa-link"></i> arXiv Preprint
                             </span>
                         </div>
