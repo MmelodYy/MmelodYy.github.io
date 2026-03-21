@@ -188,16 +188,13 @@
   .box-image {
     cursor: pointer;
   }
-  .publication-video {
-    width: 100%;
-    background-color: #000;
-    overflow: hidden;
-  }
-  
   .publication-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover; /* 或 contain，根据需要选择 */
   }
 </style>
 </head>
