@@ -381,17 +381,43 @@ into a unified representation. It effectively eliminates artifacts that persist 
 </section>
 <!-- End image carousel -->
 
+
+<style>
+  .publication-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 比例，可根据需要调整 */
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  .publication-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 或 contain */
+  }
+ 
+  .box-image:hover .overlay {
+      opacity: 1 !important;
+  }
+  .box-image {
+      cursor: pointer;
+  }
+</style>
+
 <!-- Teaser video -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Using Different Modalities and Keypoint Numbers</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <video width="100%" controls autoplay muted playsinline>
+            <video controls autoplay muted playsinline>
               <source src="static/videos/Video.mp4" type="video/mp4">
             </video>
           </div>
@@ -400,7 +426,6 @@ into a unified representation. It effectively eliminates artifacts that persist 
     </div>
   </div>
 </section>
-<!-- End Teaser video -->
 
 
 <section class="section hero is-small" id="paper_view">
@@ -423,17 +448,10 @@ into a unified representation. It effectively eliminates artifacts that persist 
     </div>
 </section>
 
-<style>
-    .box-image:hover .overlay {
-        opacity: 1 !important;
-    }
-    .box-image {
-        cursor: pointer;
-    }
-</style>
+
 
 <!--BibTex citation -->
-  <section class="section is-light" id="BibTeX">
+  <section class="section hero is-light" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
