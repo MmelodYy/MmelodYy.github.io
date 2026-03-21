@@ -182,35 +182,23 @@
 
 
  <style>
-    .box-image:hover .overlay {
-        opacity: 1 !important;
-    }
-    .box-image {
-        cursor: pointer;
-    }
-    .publication-video {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 比例，可根据需要调整 */
-      background-color: #000;
-      overflow: hidden;
-    }
-    
-    .publication-video video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* 或 contain */
-    }
+  .box-image:hover .overlay {
+    opacity: 1 !important;
+  }
+  .box-image {
+    cursor: pointer;
+  }
+  .publication-video {
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+  }
   
-    .box-image:hover .overlay {
-        opacity: 1 !important;
-    }
-    .box-image {
-        cursor: pointer;
-    }
+  .publication-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 </style>
 </head>
 <body>
