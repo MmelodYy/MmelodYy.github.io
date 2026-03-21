@@ -187,14 +187,40 @@
     #paper_view .title {
       text-align: left;
     }
-    /* 视频/结果展示区域左对齐 */
-    .hero.teaser .container h2.title,
-    .hero.is-small .container h2.title {
-      text-align: left;
+    /* 视频和图片区域统一容器宽度样式 */
+    .unified-media-container {
+      width: 100%;
+      max-width: 100%;
     }
-    /* 确保carousel区域的标题左对齐 */
-    .hero.is-small .container h2.title {
-      text-align: left;
+    .video-wrapper {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* 确保carousel容器与视频容器宽度一致 */
+    .carousel-container {
+      width: 100%;
+    }
+    .results-carousel {
+      width: 100%;
+    }
+    /* 图片轮播内部图片自适应 */
+    .results-carousel .item img {
+      width: 100%;
+      object-fit: cover;
+    }
+    /* 调整teaser video section的hero-body内边距，保持与图片section一致的布局 */
+    .hero.teaser .hero-body {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    /* 确保标题下方的容器宽度一致 */
+    .container.is-max-desktop {
+      width: 100%;
     }
   </style>
 </head>
@@ -321,25 +347,26 @@
   </section>
   <!-- End paper abstract -->
 
-  <!-- Teaser video: 标题左对齐 -->
+  <!-- Teaser video: 标题左对齐，视频宽度与下方图片轮播保持一致 -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <!-- 此处标题左对齐 -->
       <h2 class="title" style="text-align: left;">Using Different Modalities and Keypoint Numbers</h2>
-      <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-          <source src="static/videos/Video.mp4" type="video/mp4">
-        </video>
+      <div class="hero-body" style="padding-top: 0.5rem;">
+        <!-- 视频容器，宽度100%，与carousel区域完全对齐 -->
+        <div class="video-wrapper">
+          <video poster="" id="tree" autoplay controls muted loop preload="metadata">
+            <source src="static/videos/Video.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </section>
   <!-- End teaser video -->
 
-  <!-- Image carousel: 标题左对齐 -->
+  <!-- Image carousel: 标题左对齐，图片轮播区域 -->
   <section class="hero is-small">
     <div class="hero-body">
-      <div class="container">
-        <!-- 左对齐标题 -->
+      <div class="container is-max-desktop">
         <h2 class="title" style="text-align: left;">Using Different Keypoint Detection Methods</h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
@@ -368,7 +395,7 @@
 
   <!-- Paper section: 标题左对齐 -->
   <section class="section" id="paper_view">
-    <div class="container">
+    <div class="container is-max-desktop">
       <div class="row">
         <div class="col-md-12">
           <h2 class="title" style="text-align: left;">Paper</h2>
@@ -440,16 +467,24 @@
         alert('无法复制，请手动选择复制');
       });
     }
-    // 确保carousel初始化（如果有依赖）
+    
+    // 初始化轮播，确保图片轮播宽度与视频区域一致（自然一致，因为都用container is-max-desktop）
     $(document).ready(function() {
       if (typeof bulmaCarousel !== 'undefined' && $('#results-carousel').length) {
-        $('#results-carousel').bulmaCarousel({
-          slidesToScroll: 1,
-          autoplay: false,
-          loop: true,
-          pagination: true
-        });
+        try {
+          $('#results-carousel').bulmaCarousel({
+            slidesToScroll: 1,
+            autoplay: false,
+            loop: true,
+            pagination: true,
+            infinite: true
+          });
+        } catch(e) {
+          console.log("Carousel init skipped");
+        }
       }
+      // 确保视频和图片都自适应宽度，并且它们所在的容器宽度完全相同
+      // 已经通过统一使用 .container.is-max-desktop 实现
     });
   </script>
 </body>
