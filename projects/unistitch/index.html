@@ -188,6 +188,29 @@
     .box-image {
         cursor: pointer;
     }
+    .publication-video {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 比例，可根据需要调整 */
+      background-color: #000;
+      overflow: hidden;
+    }
+    
+    .publication-video video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 或 contain */
+    }
+  
+    .box-image:hover .overlay {
+        opacity: 1 !important;
+    }
+    .box-image {
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
@@ -325,6 +348,26 @@ into a unified representation. It effectively eliminates artifacts that persist 
 </section>
 <!-- End paper abstract -->
 
+<!-- Teaser video -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Using Different Modalities and Keypoint Numbers</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <video controls autoplay muted playsinline>
+              <source src="static/videos/Video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Teaser video -->
+
 <!-- Image carousel -->
 <section class="section hero is-small">
   <div class="hero-body">
@@ -381,54 +424,7 @@ into a unified representation. It effectively eliminates artifacts that persist 
 </section>
 <!-- End image carousel -->
 
-
-<style>
-  .publication-video {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 比例，可根据需要调整 */
-    background-color: #000;
-    overflow: hidden;
-  }
-  
-  .publication-video video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 或 contain */
-  }
- 
-  .box-image:hover .overlay {
-      opacity: 1 !important;
-  }
-  .box-image {
-      cursor: pointer;
-  }
-</style>
-
-<!-- Teaser video -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Using Different Modalities and Keypoint Numbers</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <video controls autoplay muted playsinline>
-              <source src="static/videos/Video.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section hero is-small" id="paper_view">
+<section class="section hero is-light" id="paper_view">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -449,9 +445,8 @@ into a unified representation. It effectively eliminates artifacts that persist 
 </section>
 
 
-
 <!--BibTex citation -->
-  <section class="section hero is-light" id="BibTeX">
+  <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
