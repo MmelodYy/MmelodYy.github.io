@@ -225,7 +225,7 @@
                     <!-- TODO: Replace with your institution and conference/journal info -->
                     <span class="author-block"><sup>1</sup>CQUPT, <sup>2</sup>PolyU, <sup>3</sup>NTU, <sup>4</sup>NUS, <sup>5</sup>BJTU</span>
                     <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Project Leader</small></span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Project Lead</small></span>
                   </div>
 
             
@@ -277,24 +277,22 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/Video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        UniStitch Stitching Performance with Different Modalities and Keypoint Numbers
-      </h2>
+<!-- Teaser image-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <p>
+      <img src="static/videos/fig1.png" alt="Learning from model weights" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy" />
+        </p>
+        <br>
+        <p>
+            Existing image stitching solutions vs. UniStitch (ours). The proposed UniStitch integrates the traditional geometric feature and learning-based semantic feature
+into a unified representation. It effectively eliminates artifacts that persist when either feature modality is used alone, delivering a clear improvement.
+          </p>
+      </div>
     </div>
-  </div>
-</section>
-<!-- End teaser video -->
+  </section>
+  <!-- End teaser image -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -305,20 +303,20 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Traditional image stitching methods estimate warps from
-hand-crafted geometric features, whereas recent learning-based solutions
-leverage semantic features from neural networks instead. These two lines
-of research have largely diverged along separate evolution, with virtually
-no meaningful convergence to date. In this paper, we take a pioneering step to bridge this gap by unifying semantic and geometric features
-with UniStitch, a unified image stitching framework from multimodal
-features. To align discrete geometric features (i.e., keypoint) with continuous semantic feature maps, we present a Neural Point Transformer
-(NPT) module, which transforms unordered, sparse 1D geometric keypoints into ordered, dense 2D semantic maps. Then, to integrate the
-advantages of both representations, an Adaptive Mixture of Experts
-(AMoE) module is designed to fuse geometric and semantic representations. It dynamically shifts focus toward more reliable features during
-the fusion process, allowing the model to handle complex scenes, especially when either modality might be compromised. The fused representation can be adopted into common deep stitching pipelines, delivering significant performance gains over any single feature. Experiments show
-that UniStitch outperforms existing state-of-the-art methods with a large
-margin, paving the way for a unified paradigm between traditional and
-learning-based image stitching.
+              Traditional image stitching methods estimate warps from
+  hand-crafted geometric features, whereas recent learning-based solutions
+  leverage semantic features from neural networks instead. These two lines
+  of research have largely diverged along separate evolution, with virtually
+  no meaningful convergence to date. In this paper, we take a pioneering step to bridge this gap by unifying semantic and geometric features
+  with UniStitch, a unified image stitching framework from multimodal
+  features. To align discrete geometric features (i.e., keypoint) with continuous semantic feature maps, we present a Neural Point Transformer
+  (NPT) module, which transforms unordered, sparse 1D geometric keypoints into ordered, dense 2D semantic maps. Then, to integrate the
+  advantages of both representations, an Adaptive Mixture of Experts
+  (AMoE) module is designed to fuse geometric and semantic representations. It dynamically shifts focus toward more reliable features during
+  the fusion process, allowing the model to handle complex scenes, especially when either modality might be compromised. The fused representation can be adopted into common deep stitching pipelines, delivering significant performance gains over any single feature. Experiments show
+  that UniStitch outperforms existing state-of-the-art methods with a large
+  margin, paving the way for a unified paradigm between traditional and
+  learning-based image stitching.
           </p>
         </div>
       </div>
@@ -327,26 +325,46 @@ learning-based image stitching.
 </section>
 <!-- End paper abstract -->
 
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title">Different Modalities and Keypoint Numbers</h2>
+      <!-- TODO: Replace with your teaser video -->
+      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+        <!-- TODO: Add your video file path here -->
+        <source src="static/videos/Video.mp4" type="video/mp4">
+      </video>
+      <!-- TODO: Replace with your video description -->
+      <!-- <h2 class="subtitle has-text-centered">
+        UniStitch Stitching Performance with Different Modalities and Keypoint Numbers
+      </h2> -->
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
 
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
+    <h2 class="title">Different Keypoint Detection Methods</h2>
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
         <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
+        <!-- <h2 class="subtitle has-text-centered">
            Qualitative comparison on the UDIS-D dataset.
-        </h2>
+        </h2> -->
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
+        <!-- <h2 class="subtitle has-text-centered">
           Qualitative comparison on the classical dataset.
-        </h2>
+        </h2> -->
       </div>
     
   </div>
